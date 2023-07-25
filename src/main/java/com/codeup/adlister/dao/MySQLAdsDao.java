@@ -3,7 +3,6 @@ package com.codeup.adlister.dao;
 import com.codeup.adlister.models.Ad;
 import com.mysql.cj.jdbc.Driver;
 import dao.Config;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

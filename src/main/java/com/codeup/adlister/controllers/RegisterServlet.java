@@ -33,7 +33,6 @@ public class RegisterServlet extends HttpServlet {
 
         User newUser = new User(username, email, password);
 
-        // Attempt to create user in the database
         User createdUser = DaoFactory.getUsersDao().createUser(newUser);
         if (createdUser != null) {
             try {
@@ -43,7 +42,6 @@ public class RegisterServlet extends HttpServlet {
                 e.printStackTrace();
             }
         } else {
-            // Print failed user creation message
             System.out.println("User creation failed. User object: " + newUser);
             try {
                 response.sendRedirect(request.getContextPath() + "/register?error=1");
