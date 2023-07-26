@@ -24,6 +24,15 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
+        if (DaoFactory.getUsersDao().findByUsername(username) != null) {
+            try {
+                response.sendRedirect(request.getContextPath() + "/register?error=username");
+                return;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
         // TODO: Perform data validation, check if the username and email are unique, etc.
 
         System.out.println("Received form data:");
