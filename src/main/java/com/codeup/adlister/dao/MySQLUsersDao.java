@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySQLUsersDao implements UsersDao {
+public class MySQLUsersDao implements Users {
 
 	private static Connection connection;
 
